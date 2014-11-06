@@ -27,7 +27,7 @@ class LZW:
         if not (now_string in self.dict):
             self.dict[now_string]=now_index+1
             self.dict_re[now_index+1]=now_string
-        last_index=self.dict[temp]
+        last_index=self.dict[now_string]
         self.after.append(last_index)
                 
     def Decoding(self):
