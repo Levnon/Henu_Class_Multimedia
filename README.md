@@ -11,3 +11,6 @@
 > 1. 行程编码（Run-Length Encoding）[在线页见这里](http://haoyu.de?p=136)
 > 2. 算术编码（Arithmetic Coding）
 > 3. LZW编码（LZW Encoding）
+> 4. 混合编码、多重编码（没有写）
+> 5. 倒排表，IF-IDF和BM25（Inverted_Index）
+
