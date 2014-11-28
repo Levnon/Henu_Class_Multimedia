@@ -4,7 +4,6 @@ class LZW:
     after=[]
     
     def Encoding(self):
-<<<<<<< HEAD
         now_index=0
         for i in range(1,256):
             now_index+=1
@@ -15,11 +14,6 @@ class LZW:
                 now_index+=1
                 self.dict[i]=now_index
                 self.dict_re[now_index]=i
-=======
-        dict={}
-        for i in range(1,256):
-            dict[chr(i)]=i
->>>>>>> df7f4e0727ac853d9b1a3d252fd6ea1bfc117873
         self.after=[]
         now_index=255
         s=""
