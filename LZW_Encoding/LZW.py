@@ -2,10 +2,9 @@
 class LZW:
     before=""
     after=[]
-    dict={}
-    dict_re={}
     
     def Encoding(self):
+<<<<<<< HEAD
         now_index=0
         for i in range(1,256):
             now_index+=1
@@ -16,29 +15,45 @@ class LZW:
                 now_index+=1
                 self.dict[i]=now_index
                 self.dict_re[now_index]=i
+=======
+        dict={}
+        for i in range(1,256):
+            dict[chr(i)]=i
+>>>>>>> df7f4e0727ac853d9b1a3d252fd6ea1bfc117873
         self.after=[]
-        now_string=""
+        now_index=255
+        s=""
         for i in self.before:
-            now_string=now_string+i
-            if not ( now_string in self.dict):
+            temp=s+i
+            if temp in dict :
+                s+=i
+            else:
+                self.after.append(dict[s])
                 now_index+=1
-                self.dict[now_string]=now_index
-                self.dict_re[now_index]=now_string
-                temp=now_string[0:-1]
-                last_index=self.dict[temp]
-                self.after.append(last_index)
-                now_string=now_string[-1]
-        if not (now_string in self.dict):
-            self.dict[now_string]=now_index+1
-            self.dict_re[now_index+1]=now_string
-        last_index=self.dict[now_string]
-        self.after.append(last_index)
-                
+                dict[temp]=now_index
+                s=i
+        if s!="":
+            self.after.append(dict[s])
+        
     def Decoding(self):
+        dict={}
+        for i in range(1,256):
+            dict[i]=chr(i)
         self.before=""
+        now_index=255
+        s=""
+        entry=""
         for i in self.after:
-            self.before+=self.dict_re[i]
-
+            if i in dict:
+                entry=dict[i]
+            else:
+                entry=s+s[0]
+            self.before+=entry
+            if s!="":
+                now_index+=1
+                dict[now_index]=s+entry[0]
+            s=entry
+            
 if __name__ == '__main__':
     foo=LZW()
     foo.before="aabbbaabbabba"
@@ -47,3 +62,4 @@ if __name__ == '__main__':
     print(foo.after)
     foo.Decoding()
     print(foo.before)
+    
