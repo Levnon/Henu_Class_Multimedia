@@ -5,15 +5,10 @@ class LZW:
     
     def Encoding(self):
         now_index=0
-        for i in range(1,256):
+        for i in range(0,256):
             now_index+=1
             self.dict[chr(i)]=now_index
             self.dict_re[now_index]=chr(i)
-        for i in self.before:
-            if not( i in self.dict):
-                now_index+=1
-                self.dict[i]=now_index
-                self.dict_re[now_index]=i
         self.after=[]
         now_index=255
         s=""
@@ -31,7 +26,7 @@ class LZW:
         
     def Decoding(self):
         dict={}
-        for i in range(1,256):
+        for i in range(0,256):
             dict[i]=chr(i)
         self.before=""
         now_index=255
