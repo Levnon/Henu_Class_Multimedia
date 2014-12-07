@@ -12,5 +12,5 @@
 > 2. 算术编码（Arithmetic Coding）
 > 3. LZW编码（LZW Encoding）
 > 4. 混合编码、多重编码（没有写）
-> 5. 倒排表索引，IF-IDF和BM25（Inverted_Index）
+> 5. 倒排索引，IF-IDF和BM25（Inverted_Index）
 
