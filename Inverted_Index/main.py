@@ -8,12 +8,12 @@ from tfidf import TF_IDF
 from bm25 import BM25
 
 if __name__ == '__main__':
-    dir = "data"
+    fdir = "data"
     rankerUse = "TF-IDF"
     rankerAvailable = {"TF-IDF":TF_IDF, "BM25":BM25}
 
     invertedFile = InvertedIndex()
-    invertedFile.makeTextIndexFromFloder( dir )
+    invertedFile.makeTextIndexFromFloder( fdir )
 
     ranker = rankerAvailable[rankerUse]( invertedFile )
     searcher = Searcher( invertedFile, ranker )

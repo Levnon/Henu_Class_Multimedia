@@ -10,12 +10,11 @@ class BM25( object ):
     """
     name = "BM25"
 
-    k1 = 2
-    k2 = 5
-    b = 0.75
-
     def __init__( self, referance ):
         self.referance = referance
+        self.k1 = 2
+        self.k2 = referance.words / referance.files
+        self.b = 0.75
 
     def getRank( self, word, arr ):
         for filename in arr.keys():

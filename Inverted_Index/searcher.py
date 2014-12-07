@@ -31,7 +31,10 @@ class Searcher( object ):
     def __showResult( self, words, result ):
         print( "查询结果：" )
         if len( result ) == 0:
-            print( "\t没找到同时包含" + str( words ) + "的文件" )
+            if len(words)==1:
+                print( "\t没找到包含" + str( words ) + "的文件" )
+            else:
+                print( "\t没找到同时包含" + str( words ) + "的文件" )
         else:
             temp = sorted( result.items(), key = lambda x:x[1], reverse = True )
             for ( file, rank ) in temp:

@@ -15,8 +15,7 @@ class TF_IDF( object ):
 
     def getRank( self, word, arr ):
         for filename in arr.keys():
-            tf = self.referance.contains[word][filename]
-            df = self.referance.files / len( self.referance.contains[word] )
-            idf = math.log( df )
+            tf = self.referance.contains[word][filename] / self.referance.fileLength[filename]
+            idf = math.log( self.referance.files / len( self.referance.contains[word] ) )
             arr[filename] = tf * idf
         return arr

@@ -4,13 +4,12 @@ Created on 2014-11-27
 '''
 
 import glob
-import os
-import struct
 
 class InvertedIndex( object ):
-    times = {}
     contains = {}
+    fileLength = {}
     files = 0
+    words = 0
 
     def __init__( self ):
         self.times = {}
@@ -32,23 +31,21 @@ class InvertedIndex( object ):
 
     def __forSingleFile( self, filename ):
         print( "正在处理文件 " + filename + "..." )
-        dict = {}
+        tdict = {}
+        self.fileLength[filename] = 0
         with open( filename, mode = 'r' ) as inputer:
             tempFile = inputer.read().split()
+            self.words+=len(tempFile)
+            self.fileLength[filename]=len(tempFile)
             for word in tempFile:
-                if word in dict:
-                    dict[word] += 1
+                if word in tdict:
+                    tdict[word] += 1
                 else:
-                    dict[word] = 1
-        self.__mergeSmallTables( filename, dict )
+                    tdict[word] = 1
+        self.__mergeSmallTables( filename, tdict )
 
-    def __mergeSmallTables( self, filename, dict ):
-        for key, value in dict.items():
-            # counting how many files one word appears in
-            if key in self.times:
-                self.times[key] += 1
-            else:
-                self.times[key] = 1
+    def __mergeSmallTables( self, filename, tdict ):
+        for key, value in tdict.items():
             # make the inverted index file
             if not key in self.contains:
                 self.contains[key] = {}
