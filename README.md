@@ -13,4 +13,6 @@
 > 3. LZW编码（LZW Encoding）
 > 4. 混合编码、多重编码（没有写）
 > 5. 倒排索引，IF-IDF和BM25（Inverted_Index）
+> 6. 中文分词（没有写）
+> 7. 语音朗读（TTS）
 

@@ -1,0 +1,26 @@
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\bin\Debug\TTSExample.exe.config
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\bin\Debug\TTSExample.exe
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\bin\Debug\TTSExample.pdb
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\obj\Debug\TTSExample.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\obj\Debug\MainWindow.baml
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\obj\Debug\MainWindow.g.cs
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\obj\Debug\App.g.cs
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\obj\Debug\TTSExample_MarkupCompile.cache
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\obj\Debug\TTSExample.g.resources
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\obj\Debug\TTSExample.Properties.Resources.resources
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\obj\Debug\TTSExample.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\obj\Debug\TTSExample.exe
+c:\users\user\documents\visual studio 2012\Projects\TTSExample\TTSExample\obj\Debug\TTSExample.pdb
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\bin\Debug\TTSExample.exe.config
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\obj\Debug\TTSExample.exe
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\obj\Debug\TTSExample.pdb
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\bin\Debug\TTSExample.exe
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\bin\Debug\TTSExample.pdb
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\obj\Debug\TTSExample.csprojResolveAssemblyReference.cache
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\obj\Debug\MainWindow.baml
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\obj\Debug\MainWindow.g.cs
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\obj\Debug\App.g.cs
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\obj\Debug\TTSExample_MarkupCompile.cache
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\obj\Debug\TTSExample.g.resources
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\obj\Debug\TTSExample.Properties.Resources.resources
+C:\Users\YuHao\Desktop\TTSExample\TTSExample\obj\Debug\TTSExample.csproj.GenerateResource.Cache
