@@ -127,7 +127,7 @@ def encoding_file( inputFileDir = "data", outputFilename = "data.haoyu" , tempFi
         outData.write( struct.pack( "i", len( filenames ) ) )
         # 遍历每一个文件
         for filename in filenames:
-            print( '正在处理文件： ' + filename )
+            print( '正在编码文件： ' + filename )
             # 将文件进行编码，放到临时文件内
             RLE_Encoding( filename, tempFilename )
             # 将临时文件合并到主文件内：

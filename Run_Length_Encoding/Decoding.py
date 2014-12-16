@@ -34,7 +34,7 @@ def decoding_file( inputFilename = "data.haoyu" ):
             nameLengthOfFile = struct.unpack( 'i', inData.read( 4 ) )[0]
             nameOfFile = inData.read( nameLengthOfFile )
             nameOfFile = nameOfFile.decode( encoding = 'UTF-8', errors = 'strict' )
-            print( "正在处理文件： " + nameOfFile )
+            print( "正在解码文件： " + nameOfFile )
             # 读取原始文件大小
             lengthOfOriginalFile = struct.unpack( 'i', inData.read( 4 ) )[0]
             # 读取编码后文件大小
