@@ -7,7 +7,7 @@ Created on 2014年9月17日
 定义压缩文件的组结构：
 
 haoyu{
-
+在什么平台上创建的压缩文件
 文件总个数（4字节）
 
 第一个文件的文件名长度（4字节）
@@ -24,6 +24,7 @@ haoyu{
 import glob
 import os
 import struct
+import platform
 
 def RLE_Encoding( filename, outputFilename ):
     # 获取文件长度
@@ -105,7 +106,22 @@ def encoding_file( inputFileDir = "data", outputFilename = "data.haoyu" , tempFi
     with open( outputFilename, 'wb' ) as outData:
         # 写入文件头
         outData.write( b'haoyu{' )
-        filenames = glob.glob( inputFileDir + "\*" )
+        # 判断并写入平台
+        createPlatform=platform.system()
+        createPlatformNumber=0
+        slash= "/"
+        if createPlatform=="Windows":
+            slash="\\"
+            createPlatformNumber=1
+        elif createPlatform=="Linux":
+            slash="/"
+            createPlatformNumber=2
+        else:
+            slash="/"
+            createPlatformNumber=0
+        outData.write( struct.pack( "i", createPlatformNumber ) )
+        # 获取所有文件信息
+        filenames = glob.glob( inputFileDir +slash+"*" )
         print( '总文件数： ' + str( len( filenames ) ) )
         # 写入文件总个数信息（4字节）
         outData.write( struct.pack( "i", len( filenames ) ) )

@@ -4,13 +4,9 @@ Created on 2014年9月17日
 
 @author: Yu
 '''
-from binascii import b2a_hex
-from nt import mkdir
 import os
-import string
 import struct
 import sys
-
 
 def decoding_file( inputFilename = "data.haoyu" ):
     with open( inputFilename, 'rb' ) as inData:
@@ -20,6 +16,15 @@ def decoding_file( inputFilename = "data.haoyu" ):
         if data_string != b'haoyu{' :
             print( "不是有效的文件" )
             sys.exit( 1 )
+        # 读取创建文件时候所用的平台
+        createPlatformNumber= struct.unpack( 'i', inData.read( 4 ) )[0]
+        slash= "/"
+        if createPlatformNumber==1:
+            slash="\\"
+        elif createPlatformNumber==2:
+            slash="/"
+        else:
+            slash="/"
         # 读取文件总个数
         numberOfFiles = struct.unpack( 'i', inData.read( 4 ) )[0]
         print( '总文件数： ' + str( numberOfFiles ) )
@@ -35,12 +40,12 @@ def decoding_file( inputFilename = "data.haoyu" ):
             # 读取编码后文件大小
             lengthOfEncodedFile = struct.unpack( 'i', inData.read( 4 ) )[0]
             # 获得文件完整路径
-            nameOfFile = os.getcwd() + '\\' + nameOfFile
+            nameOfFile = os.getcwd() + slash+ nameOfFile
             # 截取文件目录和文件名
             ( dirname, filename ) = os.path.split( nameOfFile )
             # 判断文件夹是否存在
             if os.path.isdir( dirname ) == False:
-                os, mkdir( dirname )
+                os.mkdir( dirname )
             # 创建文件
             with open( nameOfFile, 'wb' ) as outData:
 
