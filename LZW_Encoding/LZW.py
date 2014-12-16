@@ -4,13 +4,12 @@ class LZW:
     after=[]
     
     def Encoding(self):
-        now_index=0
-        for i in range(0,256):
+        dict={}
+        now_index=0;
+        for i in range(1,256):
             now_index+=1
-            self.dict[chr(i)]=now_index
-            self.dict_re[now_index]=chr(i)
+            dict[chr(now_index)]=now_index
         self.after=[]
-        now_index=255
         s=""
         for i in self.before:
             temp=s+i
@@ -26,10 +25,11 @@ class LZW:
         
     def Decoding(self):
         dict={}
-        for i in range(0,256):
-            dict[i]=chr(i)
+        now_index=0
+        for i in range(1,256):
+            now_index+=1
+            dict[now_index]=chr(now_index)
         self.before=""
-        now_index=255
         s=""
         entry=""
         for i in self.after:
@@ -45,10 +45,10 @@ class LZW:
             
 if __name__ == '__main__':
     foo=LZW()
-    foo.before="aabbbaabbabba"
+    # foo.before="The quick brown fox jumps over the lazy dog."
+    foo.before=input("Input a string:")
     print(foo.before)
     foo.Encoding()
     print(foo.after)
     foo.Decoding()
     print(foo.before)
-    
